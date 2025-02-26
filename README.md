@@ -1,4 +1,4 @@
-# Projeto Final - Controle de LEDs e Display com Raspberry Pi Pico
+# Projeto Final - Controle de LEDs e Display com Raspberry Pi Pico - Simulação Instrumento Musical
 
 Este projeto utiliza um Raspberry Pi Pico para controlar LEDs RGB, um display SSD1306 e buzzers. O objetivo é acender LEDs de acordo com dígitos inseridos via USB, tocar notas musicais correspondentes e exibir informações no display.
 
