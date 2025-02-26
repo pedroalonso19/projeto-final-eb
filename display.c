@@ -69,8 +69,9 @@ typedef enum {
 // Variável de mudança de string para inteiro
 static volatile int ic = 0;
 
-// Variável ligada ao debounce dos botões
-static volatile uint32_t last_time = 0;
+// Variáveis para armazenar o estado atual dos LEDs
+static volatile bool blue_led_state = false;
+static volatile bool red_led_state = false;
 
 // Inicializa a estrutura do display
 ssd1306_t ssd;
@@ -158,15 +159,20 @@ int main() {
 
                     // Acende o LED correspondente
                     if (ic % 2 == 0) {
+                        blue_led_state = true;
+                        red_led_state = false;
                         gpio_put(BLED_PIN, 1); // Acende o LED azul
                         gpio_put(RLED_PIN, 0); // Apaga o LED vermelho
                     } else {
+                        blue_led_state = false;
+                        red_led_state = true;
                         gpio_put(BLED_PIN, 0); // Apaga o LED azul
                         gpio_put(RLED_PIN, 1); // Acende o LED vermelho
                     }
                 }
             }
         }
+
         sleep_ms(100);
     }
     return 0;

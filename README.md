@@ -1,72 +1,43 @@
-# Tarefa - Monitor Serial
+# Projeto Final - Controle de LEDs e Display com Raspberry Pi Pico
 
-## Objetivos: 
+Este projeto utiliza um Raspberry Pi Pico para controlar LEDs RGB, um display SSD1306 e buzzers. O objetivo é acender LEDs de acordo com dígitos inseridos via USB, tocar notas musicais correspondentes e exibir informações no display.
 
-• Compreender o funcionamento e a aplicação de comunicação serial em microcontroladores.
+## Funcionalidades
 
-• Aplicar os conhecimentos adquiridos sobre UART e I2C na prática.
+- **Controle de LEDs RGB**: Acende o LED azul para números pares e o LED vermelho para números ímpares.
+- **Display SSD1306**: Exibe o caractere digitado e uma mensagem no display OLED.
+- **Buzzers**: Toca uma nota musical correspondente ao dígito inserido.
+- **Leitura de Entrada USB**: Recebe caracteres via USB e processa a entrada.
 
-• Manipular e controlar LEDs comuns e LEDs endereçáveis WS2812.
+## Componentes Utilizados
 
-• Fixar o estudo do uso botões de acionamento, interrupções e Debounce.
+- **Raspberry Pi Pico**
+- **Display SSD1306**: Conectado via I2C.
+- **LEDs RGB**: Conectados aos pinos GPIO.
+- **Buzzers**: Conectados aos pinos GPIO.
+- **Botões**: Conectados aos pinos GPIO para futuras expansões.
 
-• Desenvolver um projeto funcional que combine hardware e software
+## Configuração de Hardware
 
-## Descrição do projeto: 
+### Pinos Utilizados
 
-Neste projeto, você deverá utilizar os seguintes componentes conectados à placa BitDogLab:
+- **I2C para Display SSD1306**
+  - SDA: GPIO 14
+  - SCL: GPIO 15
+- **LEDs RGB**
+  - LED Vermelho: GPIO 13
+  - LED Verde: GPIO 11
+  - LED Azul: GPIO 12
+- **Buzzers**
+  - Buzzer A: GPIO 21
+  - Buzzer B: GPIO 10
+- **Botões**
+  - Botão A: GPIO 5
+  - Botão B: GPIO 6
 
-• Matriz 5x5 de LEDs (endereçáveis) WS2812, conectada à GPIO 7.
 
-• LED RGB, com os pinos conectados às GPIOs (11, 12 e 13).
+## Desenvolvedor: 
+### Pedro Alonso Ribeiro Ferreira da Silva
 
-• Botão A conectado à GPIO 5.
-
-• Botão B conectado à GPIO 6.
-
-• Display SSD1306 conectado via I2C (GPIO 14 e GPIO15).
-
-## Funcionalidades do projeto: 
-
-1. Modificação da Biblioteca font.h
-• Adicionar caracteres minúsculos à biblioteca font.h. Use sua criatividade para criar os novos
-caracteres.
-
-2. Entrada de caracteres via PC
-• Utilize o Serial Monitor do VS Code para digitar os caracteres.
-• Cada caractere digitado no Serial Monitor deve ser exibido no display SSD1306.
-Observação: Apenas um caractere será enviado de cada vez, não é necessário suportar o
-envio de strings completas.
-• Quando um número entre 0 e 9 for digitado, um símbolo correspondente ao número deve
-ser exibido, também, na matriz 5x5 WS2812.
-
-3. Interação com o Botão A
-• Pressionar o botão A deve alternar o estado do LED RGB Verde (ligado/desligado).
-• A operação deve ser registrada de duas formas:
-o Uma mensagem informativa sobre o estado do LED deve ser exibida no display
-SSD1306
-o Um texto descritivo sobre a operação deve ser enviado ao Serial Monitor.
-
-4. Interação com o Botão B
-• Pressionar o botão A deve alternar o estado do LED RGB Azul (ligado/desligado).
-• A operação deve ser registrada de duas formas:
-o Uma mensagem informativa sobre o estado do LED deve ser exibida no display
-SSD1306
-o Um texto descritivo sobre a operação deve ser enviado ao Serial Monitor.
-
-## Requisitos do Projeto
-
-Para o desenvolvimento, devem ser seguidos os seguintes requisitos:
-1. Uso de interrupções: Todas as funcionalidades relacionadas aos botões devem ser implementadas
-utilizando rotinas de interrupção (IRQ).
-2. Debouncing: É obrigatório implementar o tratamento do bouncing dos botões via software.
-3. Controle de LEDs: O projeto deve incluir o uso de LEDs comuns e LEDs WS2812, demonstrando o
-domínio de diferentes tipos de controle.
-4. Utilização do Display 128 x 64: A utilização de fontes maiúsculas e minúsculas demonstrará o
-domínio do uso de bibliotecas, o entendimento do princípio de funcionamento do display, bem
-como, a utilização do protocolo I2C.
-5. Envio de informação pela UART: Visa observar a compreensão sobre a comunicação serial via UART.
-6. Organização do código: O código deve estar bem estruturado e comentado para facilitar o
-entendimento.
 
 
